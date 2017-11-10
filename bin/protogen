@@ -1,0 +1,7 @@
+#!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ 
+rm -rf $DIR/../GPBMetadata
+rm -rf $DIR/../Proto
+
+protoc --proto_path=$DIR/../src/protobuf --php_out=$DIR/../pb/ $DIR/../src/protobuf/*.proto
